@@ -19,7 +19,7 @@ $mult = $num1 * $num2;
 echo "Multiplicação: $mult <br>";
 
 //Divisão
-$div = $num1 - $num2;
+$div = $num1 / $num2;
 echo "Divisão: $div <br>";
 
 // Módulo(Resto da divisão)
@@ -81,7 +81,7 @@ echo false && false ? "Verdadeiro <br>" : "Falso<br>";
 
 echo "<hr>";
 
-// E lógico(ou ||)
+// OR lógico(ou ||)
 echo "Verdadeiro e Verdadeiro: ";
 echo true || true ? "Verdadeiro <br>" : "Falso<br>";
 
@@ -94,6 +94,8 @@ echo false || true ? "Verdadeiro <br>" : "Falso<br>";
 echo "Falso e Falso: ";
 echo false || false ? "Verdadeiro <br>" : "Falso<br>";
 
-
+//Não lógico(NOT)
+echo "Negando algo que é vedadeiro: ";
+echo !true ? "Verdadeiro <br>" : "False <br>";
 
 ?>
