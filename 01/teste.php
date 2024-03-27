@@ -44,7 +44,7 @@ ECHO "Texto 2<br>";
 //Testando case sensitive - variáveis
 $primeiroNome = "Chaves";
 echo $primeiroNome;
-ECHO $PRIMEIRONOME;
+// ECHO $PRIMEIRONOME;
 
 
 ?>
