@@ -53,5 +53,26 @@ echo "A lista de contatos é: $contact";
 echo "<br>";
 $arrayContact = explode("-", $contact);
 print_r($arrayContact);
+echo "<br>";
+
+// Palavras Reservadas e Funções Comuns
+echo "Exemplo de uso da função strtoupper para converter uma string em maiúsculas: " . strtoupper($contact) . "<br>";
+
+echo "Exemplo de uso da palavra reservada require para incluir um arquivo: ";
+// require 'arquivo.php'; comentado para não gerar erro
+echo "<br>";
+
+echo "Exemplo de uso de palavra reservada private para definir um método privado em uma classe: ";
+class Myclass {
+    private $atribute;
+
+    private function methodPrivate() {
+        // Implementação do método
+    }
+}
+
+echo "Exemplo de uso da constante mágica __DIR__ para obetr o diretório atual: " . __DIR__ . "<br>";
+echo "Exemplo de uso da constante mágica __FILE__ para obter o caminho completo do arquivo atual: " . __FILE__ . "<br>";
+
 
 ?>
