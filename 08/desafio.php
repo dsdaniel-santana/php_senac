@@ -130,8 +130,15 @@ echo "o $nQ ao quadadre é:". " ".$nQ * $nQ ;
     Solicita ao usuário um número inteiro positivo e calcula a soma de todos 
     os seus dígitos.
 */
+echo "<br>";
+
+$n1 = 5;
+$n2 = 15;
+$sum = $n1 + $n2;
+echo "A Soma de $n1 + $n2 = $sum<br>";
 
 // Implementação de Soma de Dígitos
+
 
 
 
