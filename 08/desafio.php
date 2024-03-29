@@ -27,9 +27,10 @@ echo "<br>";
 // Implementação do Cálculo do Quadrado
 /*
 RESOLUÇÃO 
-$nQ = 10
-echo "o $nQ ao quadadre é:". " ".$nQ * $nQ ;
-*/
+
+$nQ = 10;
+echo "o quadrado de $nQ é:" . ($nQ * $nQ);
+echo "<br>";
 
 
 // Desafio 3: Verificar se um número é par ou ímpar
