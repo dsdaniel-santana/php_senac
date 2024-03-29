@@ -36,5 +36,16 @@ foreach($array_vogais as $vogal) {
     echo "Vogal: $vogal <br>";
 }
 
-
+echo "<br>";
+// Exemplo 5: BREAK E CONTINUE
+echo "Exemplo 5: BREAK E CONTINUE";
+for($i=1; $i <=10; $i++){
+    if ($i ==3){
+        continue;
+    } 
+    if ($i ==8){
+        break;
+    }
+echo "Numero $i <br>";
+}
 ?>
