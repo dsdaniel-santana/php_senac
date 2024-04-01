@@ -13,31 +13,27 @@ if($a + $b == $c){
 } else {
     echo "Não é verdadeiro";
 }
-
-// Implementação da Verificação de Soma
-
-
 echo "<br>";
 
+// Implementação da Verificação de Soma
 // Desafio 2: Calcular o quadrado de um número
 /*
     Solicita ao usuário um número inteiro e calcula o quadrado desse número.
 */
 
 // Implementação do Cálculo do Quadrado
-/*
-RESOLUÇÃO 
 
+//RESOLUÇÃO 
 $nQ = 10;
-echo "o quadrado de $nQ é:" . ($nQ * $nQ);
+echo "O quadrado de $nQ é: " . ($nQ * $nQ);
 echo "<br>";
+
 
 
 // Desafio 3: Verificar se um número é par ou ímpar
 /*
-    Solicita ao usuário um número inteiro e verifica se ele é par ou ímpar.
+Solicita ao usuário um número inteiro e verifica se ele é par ou ímpar.
 */
-
 // Implementação da Verificação de Paridade
 
 
@@ -48,6 +44,12 @@ echo "<br>";
 */
 
 // Implementação do Cálculo da Média
+
+$nA = 9;
+$nB = 10;
+$nC = 11;
+echo "A média entre $nA, $nB e $nC é: " . (($nA + $nB + $nC) / 3);
+echo "<br>";
 
 
 
@@ -131,15 +133,12 @@ echo "<br>";
     Solicita ao usuário um número inteiro positivo e calcula a soma de todos 
     os seus dígitos.
 */
-echo "<br>";
-
+// Implementação de Soma de Dígitos
 $n1 = 5;
 $n2 = 15;
 $sum = $n1 + $n2;
 echo "A Soma de $n1 + $n2 = $sum<br>";
-
-// Implementação de Soma de Dígitos
-
+echo "<br>";
 
 
 
