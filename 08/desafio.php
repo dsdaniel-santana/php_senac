@@ -36,7 +36,14 @@ Solicita ao usuário um número inteiro e verifica se ele é par ou ímpar.
 */
 // Implementação da Verificação de Paridade
 
+$numV = 15;
+if ($numV % 2 == 0){
+    echo "O $numV é par";
 
+} else {
+    echo "O $numV é impar";
+}
+echo "<br>";
 
 // Desafio 4: Calcular a média de três números
 /*
@@ -62,17 +69,50 @@ echo "<br>";
 // Implementação da Verificação de Múltiplo
 
 
+$nMa = 7;
+$nMb = 3;
+if ($nMa % $nMb != 0 ) {
+    echo "Os números $nMa e $nMb não são múltiplos.\n";
+} else {
+    echo "Os números $nMa e $nMb são múltiplos.\n";
+}
+echo "<br>";
+
+
+
 
 
 //// Exercício 2: Números Primos em um Intervalo
 /*
     Solicita dois números inteiros ao usuário (N e M, onde N < M) e exibe todos os números primos no intervalo de N a M.
 */
+$numeroN = 1;
+$numeroM = 25;
 
 // Implementação de Números Primos em um Intervalo
+function ehPrimo($numero){
+    if($numero <= 1){
+        return false;
+    }
+
+    for($i = 2; $i <= sqrt($numero); $i++){
+        if($numero % $i == 0){
+            return false;
+        } 
+    }
+    return true;
+}
 
 
 
+echo "Números primos no intervalo de $numeroN até $numeroM: ";
+for ($i = $numeroN; $i <= $numeroM; $i++){
+    if (ehPrimo($i)) {
+        echo "$i ";
+    }
+}
+
+echo "<br>";
 
 
 //// Exercício 3: Conversão de Horas em Minutos
@@ -82,6 +122,17 @@ echo "<br>";
 
 // Implementação de Conversão de Horas em Minutos
 
+$time = "19:29";
+
+// Extrair horas e minutos do tempo
+list($horas, $minutos) = explode(":", $time);
+
+// Converter o tempo para minutos
+$conversao = $horas * 60 + $minutos;
+
+// Exibir o resultado
+echo "O tempo $time em minutos é: $conversao";
+echo "<br>";
 
 
 
@@ -103,6 +154,9 @@ echo "<br>";
 */
 
 // Implementação de Contagem de Dígitos em um Número
+$numemoroSolic = 10;
+echo "A contagem de digitos de: $numemoroSolic são: " .strlen($numemoroSolic) ." digitos.";
+echo "<br>";
 
 
 
@@ -124,9 +178,23 @@ echo "<br>";
 
 // Implementação de Ordenação de Números
 
+$nCa = 8;
+$nCb = 7;
+$nCc = 6;
 
+// Criar um array com os valores
+$valores = array($nCa, $nCb, $nCc);
 
+// Ordenar o array em ordem crescente
+sort($valores);
 
+// Exibir os valores em ordem crescente
+echo "Valores em ordem crescente: ";
+foreach ($valores as $valor) {
+    echo "$valor ";
+}
+
+echo "<br>";
 
 //// Exercício 9: Soma de Dígitos
 /*
@@ -149,6 +217,9 @@ echo "<br>";
     sequência: 1, 3, 6, 10, 15, 21, ...
 */
 // Implementação de Geração de Sequência Numérica
+
+$numeroSolicitado = 10;
+echo "range"
 
 
 
