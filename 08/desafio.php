@@ -154,7 +154,7 @@ echo "<br>";
 */
 
 // Implementação de Contagem de Dígitos em um Número
-$numemoroSolic = 10;
+$numemoroSolic = 2024;
 echo "A contagem de digitos de: $numemoroSolic são: " .strlen($numemoroSolic) ." digitos.";
 echo "<br>";
 
@@ -167,8 +167,14 @@ echo "<br>";
 */
 
 // Implementação de Verificação de Palíndromo
-
-
+$palavra = "bolacha";
+$palavraRev = strrev($palavra);
+if ($palavra == $palavraRev){
+    echo "A palavra $palavra é Palíndromo";
+} else{
+    echo "A palavra $palavra não é Palíndromo";
+}
+ echo "<br>";
 
 
 //// Exercício 8: Ordenação de Números
@@ -219,7 +225,10 @@ echo "<br>";
 // Implementação de Geração de Sequência Numérica
 
 $numeroSolicitado = 10;
-echo "range"
+$faixa = range($numeroSolicitado - 3, $numeroSolicitado + 3);
+
+echo " A faixa de numeros em torno de <b>$numeroSolicitado</b> é: ";
+echo implode(", ", $faixa);
 
 
 
