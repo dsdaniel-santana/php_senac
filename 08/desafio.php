@@ -122,7 +122,7 @@ echo "<br>";
 
 // Implementação de Conversão de Horas em Minutos
 
-$time = "19:29";
+$time = "01:35";
 
 // Extrair horas e minutos do tempo
 list($horas, $minutos) = explode(":", $time);
@@ -143,7 +143,11 @@ echo "<br>";
 
 // Implementação de Desenho de Pirâmide
 
-
+$alturaPiramide = 5;
+for($i = 1; $i <= $alturaPiramide; $i++){
+    echo str_repeat("* ", $i) . "<br>";
+}
+echo "<br>";
 
 
 
@@ -209,11 +213,21 @@ echo "<br>";
 */
 // Implementação de Soma de Dígitos
 $n1 = 5;
-$n2 = 15;
+$n2 = 150;
 $sum = $n1 + $n2;
 echo "A Soma de $n1 + $n2 = $sum<br>";
+$nSa = str_split($sum);
+$sd = array_sum($nSa);
+echo "A soma dos dígitos de $sum é $sd.<br>";
 echo "<br>";
-
+/*$n1 = 5;
+$n2 = 150;
+$sum = $n1 + $n2;
+echo "A Soma de $n1 + $n2 = $sum<br>";
+$nSa = str_split($sum);
+$sd = array_sum($nSa);
+echo "A soma dos dígitos de $sum é $sd.<br>";
+ */
 
 
 
