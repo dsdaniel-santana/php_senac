@@ -22,11 +22,20 @@ echo "<br>";
 */
 
 // Implementação do Cálculo do Quadrado
+<<<<<<< HEAD
+$nQ = 10;
+echo "o quadrado de $nQ é:" . ($nQ * $nQ);
+=======
+>>>>>>> 8d3d00301eeb8518171ad25b769bf777fc2540e9
 
+<<<<<<< HEAD
+echo "<br>";
+=======
 //RESOLUÇÃO 
 $nQ = 10;
 echo "O quadrado de $nQ é: " . ($nQ * $nQ);
 echo "<br>";
+>>>>>>> 8d3d00301eeb8518171ad25b769bf777fc2540e9
 
 
 
