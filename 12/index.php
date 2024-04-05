@@ -4,7 +4,7 @@
 abstract class Personagem {
     // Atributos protegidos para encapsulamento
     protected $nome;
-    protected $pontosVida;
+    protected $pontosVida;    
     protected $poderAtaque;
     private $vivo;
 
@@ -15,7 +15,6 @@ abstract class Personagem {
         $this->pontosVida = $pontosVida;
         $this->poderAtaque = $poderAtaque;
         $this->vivo = true;
-           
     }
 
     // Método para exibir dados do personagem
@@ -26,12 +25,10 @@ abstract class Personagem {
 
     abstract public function atacar($inimgo);
 
-
-
-
-    public function sofrerDano($danoSofrido){
+    public function sofrerDano($danoSofrido) {
         $this->pontosVida -= $danoSofrido;
-        if($this->pontosVida <=0){
+
+        if($this->pontosVida <= 0) {
             $this->morrer();
         }
     }
@@ -41,33 +38,53 @@ abstract class Personagem {
         echo "{$this->nome} recuperou $quantidade pontos de vida. <br>";
     }
 
-    private function morrer () {
+    private function morrer() {
         $this->vivo = false;
         echo "{$this->nome} morreu. <br>";
     }
 }
 
 class Guerreiro extends Personagem {
-    public function atacar($inimgo)
+    private $poderEscudo;
+    private $ataqueEspada;
+
+    public function __construct($nome, $pontosVida, $poderAtaque, $poderEscudo)
     {
-        
+        parent::__construct($nome, $pontosVida, $poderAtaque);
+        $this->poderEscudo = $poderEscudo;
+        $this->ataqueEspada = 5;
     }
 
+    public function atacar($inimgo)
+    {
+        $dano = $this->poderAtaque + $this->ataqueEspada;
+        $inimgo->sofrerDano($dano);
+    }
 }
 
 class Mago extends Personagem {
-    public function atacar($inimgo)
+    private $pontosMagia;
+
+    public function __construct($nome, $pontosVida, $poderAtaque, $pontosMagia)
     {
-        
+        parent::__construct($nome, $pontosVida, $poderAtaque);
+        $this->pontosMagia = $pontosMagia;
     }
 
+    public function atacar($inimgo)
+    {
+        if($this->pontosMagia > 5) {
+            $inimgo->sofrerDano($this->poderAtaque);
+            $this->pontosMagia -= 5;
+        }
+    }
 }
 
 // Não é possível instanciar um objeto a partir de uma classe abstrata
 //$personagem1 = new Personagem();
 
-$guerreiro = new Guerreiro("Aragorn", 100, 20);
-$mago = new Mago("Gandalf", 80, 30);
+$guerreiro = new Guerreiro("Aragorn", 100, 20, 10);
+$mago = new Mago("Gandalf", 80, 30, 100);
 
 echo "Dados do Guerreiro: <br>";
 $guerreiro->exibirDados();
@@ -75,7 +92,11 @@ $guerreiro->exibirDados();
 echo "Dados do Mago: <br>";
 $mago->exibirDados();
 
-$guerreiro->sofrerDano(120);
-echo "Sofreu dano de 120";
+echo "Guerreiro atacou o Mago: <br>";
+$guerreiro->atacar($mago);
+$mago->exibirDados();
+
+echo "Mago atacou o Guerreiro: <br>";
+$mago->atacar($guerreiro);
 $guerreiro->exibirDados();
 ?>
