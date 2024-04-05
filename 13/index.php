@@ -86,7 +86,7 @@ class ContaPoupanca extends Conta {
         $this->taxaRendimento = $taxaRendimento;
     }
 
-    private function aplicarRendimento() {
+    public function aplicarRendimento() {
         $this->saldo += $this->saldo * $this->taxaRendimento;
     }
 }
@@ -105,7 +105,12 @@ $contaCorrente1 = new ContaCorrente($cliente1, 1001, 1500, 500);
 $contaPoupanca1 = new ContaPoupanca($cliente1, 2001, 3000, 0.05);
 $contaCorrente2 = new ContaCorrente($cliente2, 1002, 3000, 1000);
 $contaCorrente1->exibirDados(); 
+$contaPoupanca1->exibirDados();
+$contaCorrente2->exibirDados();
+
 //echo "Dados da Conta:  $contaPoupanca1->numero $contaPoupanca1->saldo $contaPoupanca1->taxaRendimento<br>";
+
+
 //echo "Dados da Conta:  $contaCorrente2->numero $contaCorrente2->saldo $contaCorrente2->limiteChequeEspecial<br>";
 
 // Realizando operações nas contas
@@ -117,21 +122,4 @@ echo "Dados da Conta Corrente 1: $contaCorrente1 <br>";
 echo "Dados da Conta Poupança 1: $contaPoupanca1 <br>";
 echo "Dados da Conta Corrente 2: $contaCorrente2 <br>";
 
-/*
-$contaCorrente->exibirDados();
-echo "{$cliente1->nome}, fez um saque de R$100,00 <br>";
-$contaCorrente->sacar(100);
-$contaCorrente->exibirDados();
-echo "<br>";
-$contaCorrente2->exibirDados();
-$contaPoupanca->exibirDados();
-echo "{$cliente3->nome}, fez uma transferencia de R$200,00 para o destinatario {$cliente2->nome} <br>";
-$contaCorrente2->transferir(200, $contaPoupanca);
-$contaCorrente2->exibirDados();
-$contaPoupanca->exibirDados();
-echo "<br>";
-echo "Aplicado rendimento de 0.35$<br>";
-$contaPoupanca->aplicarRendimento();
-$contaPoupanca->exibirDados();
-*/
 ?>
