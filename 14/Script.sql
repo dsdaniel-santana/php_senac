@@ -11,3 +11,14 @@ CREATE TABLE IF NOT EXISTS contatos_info (
 	telefone VARCHAR (10) NOT NULL,
 	email VARCHAR (100) NOT NULL
 );
+
+-- criando um usuário para acessar o Banco de Dados
+CREATE USER 'usuario_contatos'@'localhost' IDENTIFIED BY 'senha123' 
+
+-- Concendo permissões para o usuário no banco "contatos"
+GRANT ALL PRIVILEGES ON contatos. * TO 'usuario_contatos'@'localhost';
+FLUSH PRIVILEGES;
+
+-- Inserindo dados no banco
+INSERT INTO contatos_info (nome, telefone, email) VALUES
+('Joao', '12345789', 'joao@email.com');
