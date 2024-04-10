@@ -14,7 +14,7 @@ if($connection->connect_error) {
 }
 
 // Definindo o ID que você deseja buscar
-$id = 5;
+$id = 2;
 
 // Definindo o ID que você deseja buscar
 $sql = "SELECT * FROM contatos_info WHERE id = ?";
