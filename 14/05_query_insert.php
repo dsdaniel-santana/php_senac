@@ -14,7 +14,7 @@ if ($connection->connect_error) {
 }
 
 //Criação dos dados para inserção
-$nome = "Romero";
+$nome = "Chaves";
 $telfone = "987654321";
 $email = "fulana@x.com";
 
