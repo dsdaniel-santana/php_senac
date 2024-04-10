@@ -22,17 +22,19 @@ print_r($result);
 
 if($result->num_rows>0){
         while ($row = $result->fetch_assoc()){
-        //Exibe os valores dos campos utilizando o métdo fetch_assoc
-        echo "ID: " . $row ['id'] . "<br>";
-        echo "Nome: " . $row ['nome'] . "<br>";
-        echo "Email:" . $row ['email'] . "<br>";
-        echo "<hr>";}
+            //Exibe os valores dos campos utilizando o métdo fetch_assoc
+            echo "ID: " . $row ['id'] . "<br>";
+            echo "Nome: " . $row ['nome'] . "<br>";
+            echo "Email:" . $row ['email'] . "<br>";
+            echo "<hr>";}
 
 
-    } else {
-        echo "Nenhum Registro encontrado";
+        } else {
+            echo "Nenhum Registro encontrado";
     }
         
+//Fechando a conexão com o banco de dados
+$connection->close();
     
 
 
