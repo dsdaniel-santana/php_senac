@@ -1,6 +1,5 @@
 <?php
 
-
 //Definindo banco de dados:
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME','usuario_lista_compras');
@@ -10,13 +9,20 @@ define('DB_NAME', 'lista_compras');
 //criando conexao
 $connection = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
-// Verificando se ocorreu algum erro de conexão
-if($connection->connect_error) {
-    die("Erro de conexão: " . $connection->connect_error);
+//verificação
+if($connection->connect_error){
+    die("Erro de conexão: " . $connect->connect_error);
 }
 
-$sql = "SELECT * FROM contatos_info WHERE id = ?";
+// Definindo o ID que você deseja buscar
+$id = 2;
+
+// Definindo o ID que você deseja buscar
+$sql = "SELECT * FROM itens_compra WHERE id = ?";
 $stmt = $connection->prepare($sql);
+
+
+
 
 if($stmt) {
     // Associando o parâmetro á consulta preparda
@@ -48,7 +54,6 @@ if($stmt) {
 }
 
 $connection->close();
-?>
 
 
 
