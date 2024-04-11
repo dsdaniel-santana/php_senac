@@ -14,10 +14,10 @@ if($connection->connect_error) {
 }
 
 // Criação dos dados para update
-$nome = "Pessoa X";
-$telefone = "999954321";
-$email = "Beltrano@mail.com";
-$id = 1;
+$nome = "Usuario Teste";
+$telefone = "11 999954321";
+$email = "userTeste@mail.com";
+$id = 10;
 
 // Query para atualizar um contato (utilizando consulta preparada)
 $meu_update = "UPDATE contatos_info SET nome = ?, telefone = ?, email = ? WHERE id = ?";
@@ -41,3 +41,6 @@ if ($stmt) {
 } else {
     echo "Erro na consulta preparada: " . $connection->error;
 }
+
+$connection->close();
+?>
