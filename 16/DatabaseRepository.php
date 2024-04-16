@@ -63,7 +63,6 @@ class DatabaseRepository
         return $success;
     }
 
-
     public static function getServerValues()
     {
         return  self::$server . " - " . self::$username;
