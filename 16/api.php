@@ -7,6 +7,14 @@ switch($action) {
     case 'list':
         echo json_encode(DatabaseRepository::getAllContacts());
         break;
+    case 'get':
+        $id = $_GET['id'];
+        echo json_encode(DatabaseRepository::getContactById($id));
+        break;
+    case 'getNome':
+        $nome = $_GET['nome'];
+        echo json_encode(DatabaseRepository::getContactByName($nome));
+        break;
     case 'add':
         $data = json_decode(file_get_contents('php://input', true));
         $success = DatabaseRepository::insertContact($data->nome, $data->telefone, $data->email);
