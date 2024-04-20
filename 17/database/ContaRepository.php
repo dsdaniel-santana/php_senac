@@ -16,5 +16,22 @@ class ContaRepository {
         $connection->close();
         return $contas;
     }
+
+    public static function getContasById($id) {
+        $connection = DatabaseRepository::connect();
+        $sql = "SELECT * FROM conta WHERE id = $id";
+        $result = $connection->query($sql);
+
+        $conta = null;
+        if($result->num_rows > 0) {
+            $conta = $result->fetch_assoc();
+        }
+        $connection->close();
+        return $conta;
+    }
+
+    
+
+
 }
 ?>
