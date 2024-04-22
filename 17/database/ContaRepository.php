@@ -30,6 +30,32 @@ class ContaRepository {
         return $conta;
     }
 
+    public static function insertConta($cliente_id, $numero, $saldo, $tipo, $limite_cheque_especial, $taxa_rendimento) {
+        $connection = DatabaseRepository::connect();
+        $sql = "INSERT INTO conta (cliente_id, numero, saldo, tipo, limite_cheque_especial, taxa_rendimento) VALUES 
+        ('$cliente_id', '$numero', '$saldo', '$tipo', '$limite_cheque_especial', '$taxa_rendimento')";
+        $success = $connection->query($sql);
+        $connection->close();
+        return $success;
+    }
+
+    public static function updateConta($id, $cliente_id, $numero, $saldo, $tipo, $limite_cheque_especial, $taxa_rendimento) {
+        $connection = DatabaseRepository::connect();
+        $sql = "UPDATE conta SET cliente_id='$cliente_id', numero='$numero', saldo ='$saldo' , tipo= '$tipo', 
+        limite_cheque_especial='$limite_cheque_especial', taxa_rendimento='$taxa_rendimento' WHERE id='$id' ";
+        $success = $connection->query($sql);
+        $connection->close();
+        return $success;
+    }
+
+    public static function deleteConta($id){
+        $connection = DatabaseRepository::connect();
+        $success = $connection->query("DELETE FROM conta WHERE id=$id");
+        $connection->close();
+        return $success;
+    }
+
+
     
 
 
