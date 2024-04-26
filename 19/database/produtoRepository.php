@@ -11,12 +11,38 @@ class ProdutoRepository{
         $produtos = [];
         if($result->num_rows > 0){
             while($row = $result->fetch_assoc()){
-                $produto = new Pedido($row['id'], $row['nome'], $row['descricao'], $row['preco']);
+                $produto = new Produto($row['id'], $row['nome'], $row['descricao'], $row['preco']);
                 $produtos[] = $produto;
             }
         }
             $connection->close();
             return $produtos;
+    }
+
+    public static function getprodutosByid($id){
+        $connection = DatabaseRepository::connect();
+        $result = $connection->quert("SELECT * FROM produto WHERE id = $id");
+
+        $produto = null;
+
+        if($result-> num_rows >0){
+            $row = $result->fetch_assoc();
+            $produto = new Produto($row['id'],$row['nome'], $row['descricao'], $row['preco']);
+        }
+        $connection->close();
+        return $produto;
+    }
+
+    public static function insertProduct(Produto $produto){
+        $connection = DatabaseRepository::connect();
+        $nome = $produto->getNome();
+        $descricao = $produto->getDescricao();
+        $preco = $produto->getPreco();
+        $sql = "INSERT INTO produto (nome, descricao, preco) VALUES('$nome', '$descricao', '$preco') ";
+        $success = $connection->query($sql);
+        $connection->close();
+        return $success;
+
     }
 }
 ?> 
