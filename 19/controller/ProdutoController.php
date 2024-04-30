@@ -1,6 +1,5 @@
 <?php
-
-require_once 'database/ProdutoRepository.php';
+require_once 'database/produtoRepository.php';
 
 class ProdutoController {
     public static function handleRequest($action) {

@@ -10,8 +10,6 @@ class Produto implements JsonSerializable {
         $this->nome = $nome;
         $this->descricao = $descricao;
         $this->preco = $preco;
-
-
     }
 
     public function getId(){

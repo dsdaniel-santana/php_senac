@@ -2,7 +2,7 @@
 class DatabaseRepository {
     private static $host = 'localhost';    
     private static $username = 'root';    
-    private static $password = '';    
+    private static $password = 'Root@123';    
     private static $database = 'loja';    
     private static $conn;
 

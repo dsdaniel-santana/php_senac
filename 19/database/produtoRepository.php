@@ -1,6 +1,6 @@
 <?php
 require_once 'DatabaseRepository.php';
-require_once 'model/Produto.php';
+require_once 'model/produto.php';
 
 class ProdutoRepository {
     public static function getAllProdutos() {
