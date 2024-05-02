@@ -48,7 +48,8 @@ class PedidoController{
                 echo json_encode(['error' => 'Pedido não econtrado']);
             }
         } else {
-            http_response_code(405); 
+            http_response_code(405);
+            echo json_encode(['método não permitido' => 'Essa requisição só aceita GET']); 
         }
     } 
 
