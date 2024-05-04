@@ -21,6 +21,25 @@ INSERT INTO (nome, descricao, preco)values
 
 -- Inserir Pedidos
 INSERT INTO pedido(data_pedido, status) values
-('',''),
-('','')
+('2024-05-03','pendente'),
+('2024-04-01','concluido');
+
+-- Criar Tabela produto_pedido
+CREATE TABLE IF NOT EXISTS produto_pedido(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    produto_id INT NOT NULL,
+    pedido_id INT NOT NULL,
+    quantidade INT NOT NULL,
+    FOREIGN KEY (produto_id) REFERENCES produto(id),
+    FOREIGN KEY (pedido_id) REFERENCES pedido(id)
+
+);
+
+-- Inserir alguns itens nos pedidos de exemplo
+INSERT INTO produto_pedido(produto_id, pedido_id, quantidade) values
+(1, 1, 2),
+(2, 1, 5),
+(3, 2, 8);
+
+
 
